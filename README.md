@@ -1,4 +1,5 @@
 # Project
+
 # Car Pricing with Linear, Random Forest and Decision Tree Regression
 
 The given requirements of the project were to take an econometric / statistical analysis, translate it to a different language and improve the study. 
@@ -83,6 +84,8 @@ To have a high accurate result for the model one of the most important steps of 
 
 As a next step, We had to make dataframe suitable for further implication of linear regression modeling. For this firstly, we changed categorical variables to numerical variable and used scaler function for continues columns and concatenated the results which transformed the data into numerical format to make inretpretation easy for us.
 
+## Linear, Random Forest and Decision Tree Regression Analysis
+
 Finally, we started the process of creating the linear regression model.For this, initially dataset into training and testing data with percentage 70% and 30% relatively. 
 
 Then we used training data to create modeling including all the features.
@@ -94,7 +97,39 @@ After the help of the library to choose the best fitted features for our model w
 
 This second model gave us R^2 of 95%, so on Model 3 we dropped the variables with highest p value which was the enginesize. Afterwards we constructed 7 additional models stematically removing the variables with insignificant variables (Model_504(SW), Model_304, Model_CENTURY, highwaympg, Brand_SAAB, wheelbase, carbody_convertible, ) and those with the highest p-values one by one.
 
-## Random Forest and Decision Tree Regression Analysis
+****
+
+After linear regression model, we created random forest regression model with GridSearchCV hyperparameter tunning.
+
+Random forest is a machine learning algorithm which comparise many trees and provides average to give better results and improve performance of the model. We created the model with GridSearchCV to choose best hyperparameter which increases accuracy and performance of the model by avoiding over or underfitting.
+
+As first step, data seperated once again as y_train1, x_train1, y_train1 and x_test1 to prevent the confusion with several splits from previous model linear regression and the base model rf = RandomForestRegressor() is provided. 
+
+Then, number of trees in the random forest, number of features, maximum number of levels in trees, minimum number of samples required to split a node and at each leaf node and method of selecting samples are defined to utilize on GridSearchCV. The numbers and features could be changed to increase performance and get better results. However, because of the time length of running, we keep them less. 
+
+param_grid defined with selected hyperparameters and GridSearchCV performed with param_grid, cv=5, verbose=2 and n_jobs = -1 for random forest model. GridSearchCV run all the possible combinations of the hyperparameters and provide the best combination with best results.
+
+After running GridSearchCV, the model fit train data by
+rf_grid.fit(x_train1,y_train1) and best hyperparameters checked which are bootstrap = True, max_depth = 6, max_features = auto, min_samples_leaf = 3, min_samples_split = 3 and n_estimators = 41 with best score R2 almost 0.90 with rounding.
+
+As last, model is validated with test data to check accuracy and performance. RMSE calculated and almost 0.31 RMSE result with rounding found.
+
+Decision tree is also performed just to provide a visualization of the model with best hyperparameters found on previous model Random Forest regression. The model trained with train data and decision tree visualized to see dominant feature and how the tree built. It also predicted with test data and RMSE is calculated as the indicator of model accuracy. RMSE gave almost same result with random forest with hyperparameter tunning as 0.31 without rounding.
+
+As a result, we performed  Linear, Random Forest and Decision Tree regression models to analyse car pricing dynamics. Linear regression technical analysis gives 0.33 RMSE result however it gave 0.05 RMSE as machine learning model which didn't work well. Random Forest and decision tree regression gave 0.31 with rounding and 0.31 RMSE respectively.
+
+Based on our results, linear regression machine learning model didn't perform well. Linear regression technical model works slightly better than others as RMSE values almost same which found on random forest and decision tree machine learning modelling. However, it can be also said that models didn't work so good in general as RMSE around 0.30 and better performing models could be found. Models also could be tuned by adding more hyper parameters to find better performing model.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
