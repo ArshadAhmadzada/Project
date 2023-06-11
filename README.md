@@ -20,10 +20,12 @@ Before performing any analysis in order to get high-quality information and to i
 Feature Analysis
 
 For the purpose of data understanding, model improvement and model interpretability, we conducted a features analysis. Firstly, we created barplots for feature distributions based on the prices.
-These barplots gave us the information that how there are more low price cars and type gas cars. We conluded from the barplots that prices typically increase as a result of factors including diesel fuel, turbo aspiration, four doors, rwd drivewheel, rear engine placement, and advanced engine type and the cost of the cars influnced by factors like fuel type, aspiration, door number, drivewheel, engine location, and engine type.
+These barplots gave us the information that how there are more low price cars and type gas cars. We concluded from the barplots that prices typically increase as a result of factors including diesel fuel, turbo aspiration, four doors, rwd drivewheel, rear engine placement, and advanced engine type and the cost of the cars influenced by factors like fuel type, aspiration, door number, drivewheel, engine location, and engine type.
 
 Secondly, we created scatter plots which show the distribution of the rest of the features based on prices. Those gave us clear understanding that car's price is positively correlated with features including wheel base, car length, car width, curb weight, engine size, bore ratio, and horsepower. Features such as larger wheel base, longer and wider cars, heavier curb weight, bigger engine size, larger bore ratio, and higher horsepower indicates more luxurious and higher-priced vehicles.This implies that the price of the car typically rises along with the value of these factors.
 
+Outlier check and Treatment
 
+To have a high accurate result for the model one of the most important steps of data processing is to check if there is any outliers and to treat them.Outliers are data points which are significantly smaller or larger than the remaining data set. From the right-skewed distribution we already aware of the possibility of the outlier. Hence we started to detection of the outlier by listing all the numeric variables in dataframe and create Categorical and Continues columns. In order to check and remove outliers from Continues column we calculated the lower and upper boundaries and assigned highest and the lowest values to outliers. Finally, as an output we got a 0 which means there is not any NaN value. 
 
 
