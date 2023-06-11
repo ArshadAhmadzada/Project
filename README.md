@@ -28,4 +28,21 @@ Outlier check and Treatment
 
 To have a high accurate result for the model one of the most important steps of data processing is to check if there is any outliers and to treat them.Outliers are data points which are significantly smaller or larger than the remaining data set. From the right-skewed distribution we already aware of the possibility of the outlier. Hence we started to detection of the outlier by listing all the numeric variables in dataframe and create Categorical and Continues columns. In order to check and remove outliers from Continues column we calculated the lower and upper boundaries and assigned highest and the lowest values to outliers. Finally, as an output we got a 0 which means there is not any NaN value. 
 
+As a next step, We had to make dataframe suitable for further implication of linear regression modeling. For this firstly, we changed categorical variables to numerical variable and used scaler function for continues columns and concatenated the results which transformed the data into numerical format to make inretpretation easy for us.
+
+Finally, we started the process of creating the linear regression model.For this, initially dataset into training and testing data with percentage 70% and 30% relatively. 
+
+Then we used training data to create modeling including all the features.
+From our first model, we got the result R squared – 1 which means our model is perfectly fit to predict price while Adjusted R squared being nan indicates that we need to eliminate some variables since we 143 observations and 217 different independent variables for which we can not reject the hypothesis that their coefficient is not 0. 
+
+This is where we faced one of our challenges. On the project we took from Kaggle this part was used stepAIC function,so in order to solve this issue we had to use  stepwise_regression library and since jupyter is unable to install and call functions of it, we manually added them here. This library is a great tool to help to select the most important variables for the model.
+
+After the help of the library to choose the best fitted features for our model we started to create linear regression modeling.
+
+This second model gave us R^2 of 95%, so on Model 3 we dropped the variables with highest p value which was the enginesize. Afterwards we constructed 7 additional models stematically removing the variables with insignificant variables (Model_504(SW), Model_304, Model_CENTURY, highwaympg, Brand_SAAB, wheelbase, carbody_convertible, ) and those with the highest p-values one by one.
+
+
+
+
+
 
