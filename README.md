@@ -12,31 +12,56 @@ As we stated above we used linear regression as it is one of the most common typ
 
 The coding process started with importing the necessary libraries and car pricing data. Below, the descriptions of the features on the dataset can be found;
 
-Car_ID                     - Unique id of each observation 
+Car_ID                     - Unique id of each observation
+
 Symboling                  - Insurance risk rating,  +3 indicates risky auto, -3 indicates pretty safe auto
+
 carCompany                 - Name of car company 
+
 fueltype                   - Car fuel type 
+
 aspiration                 - Aspiration used in a car 
+
 doornumber                 - Number of doors in a car 
+
 carbody                    - Body of car 
+
 drivewheel                 - Type of drive wheel 
+
 enginelocation             - Location of car engine 
+
 wheelbase                  - Weelbase of car 
+
 carlength                  - Length of car 
+
 carwidth                   - Width of car 
+
 carheight                  - Height of car 
+
 curbweight                 - The weight of a car without occupants or baggage. 
-enginetype                 - Type of engine. 
+
+enginetype                 - Type of engine.
+
 cylindernumber             - Cylinder placed in the car 
+
 enginesize                 - Size of car
+
 fuelsystem                 - Fuel system of car 
+
 boreratio                  - Boreratio of car 
+
 stroke                     - Stroke of the engine
+
 compressionratio           - Compression ratio of car 
+
 horsepower                 - Horsepower 
+
 peakrpm                    - Car peak rpm
+
 citympg                    - Mileage in city 
+
 highwaympg                 - Mileage on highway
+
 price(Dependent variable)  - Price of car 
 
 Since it didn't have any impact on car prices we dropped Car ID from our data set. To gain a clearer understanding of the data, we plotted the prices to observe the distribution and determine if there is an asymmetry present. The distribution of the price is right-skewed, which could lead to outliers in the tail region and this could negatively affect the performance of the model. Therefore, log-linear regression might be better suited than simple linear regression for our model. 
