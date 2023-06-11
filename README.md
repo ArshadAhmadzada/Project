@@ -11,4 +11,5 @@ The results of our study demonstrated the effectiveness of the linear regression
 
 As we stated above we used linear regression as it is one of the most common types of statistical analysis which is used to predict the relationship between two variables. 
 
+The coding process started with importing the necessary libraries and car pricing data. Since it didn't have any impact on car prices we dropped Car ID from our data set. To gain a clearer understanding of the data, we plotted the prices to observe the distribution and determine if there is an asymmetry present. The distribution of the price is right-skewed, which could lead to outliers in the tail region and this could negatively affect the performance of the model. Therefore, log-linear regression might be better suited than simple linear regression for our model. 
 
